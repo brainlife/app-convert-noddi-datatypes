@@ -1,0 +1,24 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=1,walltime=0:15:00
+#PBS -N app-convert-noddi-datatypes
+
+icvf=`jq -r '.icvf' config.json`
+isovf=`jq -r '.isovf' config.json`
+od=`jq -r '.od' config.json`
+dir=`jq -r '.dir' config.json`
+
+old_names=("icvf" "isovf" "od")
+new_names=("ndi" "isovf" "odi")
+
+mkdir -p noddi
+
+for NAMES in ${!new_names[@]}
+do
+	meas=$(eval "echo \$${old_names[$NAMES]}")
+	echo ${meas}
+	cp $meas ./noddi/${new_names[$NAMES]}.nii.gz
+done
+
+cp ${dir} ./noddi/
+
+#[ ! -f noddi/odi.nii.gz ] && echo "failed" && exit 1 || echo "complete" && exit 0
