@@ -10,7 +10,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-lightgrey.svg" alt="MIT license"></a>
 </p>
 
-## 🧠 At a glance
+## At a glance
 
 <!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
 
@@ -20,18 +20,18 @@ Copies icvf.nii.gz to ndi.nii.gz, od to odi.nii.gz and isovf unchanged, plus the
 
 | | |
 |---|---|
-| 📥 **Inputs** | `neuro/noddi-deprecated` |
-| 📤 **Outputs** | `neuro/noddi` |
-| ⚙️ **Resources** | 1 CPUs · 0.08 h walltime |
-| 🔗 **Run it** | [doi.org/10.25663/brainlife.app.368](https://doi.org/10.25663/brainlife.app.368) |
+| **Inputs** | `neuro/noddi-deprecated` |
+| **Outputs** | `neuro/noddi` |
+| **Resources** | 1 CPUs · 0.08 h walltime |
+| **Run it** | [doi.org/10.25663/brainlife.app.368](https://doi.org/10.25663/brainlife.app.368) |
 
-#### 📥 Inputs
+#### Inputs
 
 | Input | Datatype | Required | Description |
 |---|---|---|---|
 | `noddi-deprecated` | `neuro/noddi-deprecated` | yes | Deprecated NODDI outputs: icvf, isovf, od and dir maps. |
 
-#### 📤 Outputs
+#### Outputs
 
 | Output | Datatype | Description |
 |---|---|---|
@@ -39,7 +39,7 @@ Copies icvf.nii.gz to ndi.nii.gz, od to odi.nii.gz and isovf unchanged, plus the
 
 <!-- brainlife-app:end -->
 
-## 🚀 Running the App
+## Running the App
 
 This is a temporary utility App, designed for use within brainlife.io. The main change between the deprecated and the current NODDI datatype is the file naming, which now follows the more commonly used acronyms:
 
@@ -52,11 +52,11 @@ This is a temporary utility App, designed for use within brainlife.io. The main 
 
 The App only copies and renames files; it does not recompute anything.
 
-### ☁️ On brainlife.io
+### On brainlife.io
 
 Open the App at [doi.org/10.25663/brainlife.app.368](https://doi.org/10.25663/brainlife.app.368), choose a `neuro/noddi-deprecated` dataset from your project and press **Execute**. The converted `neuro/noddi` dataset is archived to your project and can feed any App that expects the current NODDI naming.
 
-### 💻 Locally
+### Locally
 
 You need `bash`, `cp` and [`jq`](https://jqlang.github.io/jq/); no container is used.
 
@@ -78,7 +78,7 @@ You need `bash`, `cp` and [`jq`](https://jqlang.github.io/jq/); no container is 
    ./main
    ```
 
-### 🧪 Sample data
+### Sample data
 
 Download a NODDI-deprecated dataset from brainlife.io with the [brainlife CLI](https://github.com/brainlife/cli):
 
@@ -89,7 +89,7 @@ mkdir input
 bl dataset download <dataset id>
 ```
 
-## 📦 Outputs
+## Outputs
 
 ```text
 noddi/
@@ -99,11 +99,11 @@ noddi/
 └── dir.nii.gz     direction map, copied with its original name
 ```
 
-## 🩺 Troubleshooting
+## Troubleshooting
 
 - **Missing files in the output**: `main` does not stop on a failed copy; check the job log for `cp` errors, which mean one of the input maps was missing from the deprecated dataset.
 
-## 📚 Citing
+## Citing
 
 > [!TIP]
 > If you use this App in your work, please cite the App, the software it builds on and brainlife.io (below). GitHub's **Cite this repository** button gives the App citation in APA and BibTeX.
@@ -113,13 +113,13 @@ noddi/
 - Zhang et al. NODDI: Practical in vivo neurite orientation dispersion and density imaging of the human brain. *NeuroImage* 61:1000-1016 (2012). [doi:10.1016/j.neuroimage.2012.03.072](https://doi.org/10.1016/j.neuroimage.2012.03.072)
 - Hayashi S, Caron BA, Heinsfeld AS, et al. brainlife.io: a decentralized and open-source cloud platform to support neuroscience research. *Nature Methods* 21:809–813 (2024). [doi:10.1038/s41592-024-02237-2](https://doi.org/10.1038/s41592-024-02237-2)
 
-## 👥 Authors
+## Authors
 
 - Brad Caron
 
 **Contributors:** Soichi Hayashi
 
-## 💰 Funding
+## Funding
 
 [![Wellcome-226486/Z/22/Z](https://img.shields.io/badge/Wellcome-226486%2FZ%2F22%2FZ-purple.svg)](https://wellcome.org/)
 [![NIH-NINDS-U24NS140384](https://img.shields.io/badge/NIH_NINDS-U24NS140384-green.svg)](https://reporter.nih.gov/project-details/11261037)
@@ -138,6 +138,6 @@ noddi/
 
 <sub>brainlife.io is publicly funded, and acknowledging that support helps keep it running. This App was developed with support from Wellcome, the U.S. National Institutes of Health (including the BRAIN Initiative BRAIN CONNECTS program: The Axonal Projectome EXchange, U24NS140384, and the Center for Mesoscale Connectomics, UM1NS132207) and the U.S. National Science Foundation.</sub>
 
-## ⚖️ License
+## License
 
 MIT. Copyright (c) 2020 brainlife.io, The University of Texas at Austin and Indiana University.
